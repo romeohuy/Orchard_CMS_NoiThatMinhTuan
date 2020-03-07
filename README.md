@@ -1,52 +1,61 @@
-# Orchard
+# Orchard Core 
 
-Orchard is a free, open source, community-focused Content Management System built on the ASP.NET MVC platform.
+Orchard Core consists of two distinct projects:
 
-[![Join the chat at https://gitter.im/OrchardCMS/Orchard](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/OrchardCMS/Orchard?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+- __Orchard Core Framework__: An application framework for building modular, multi-tenant applications on ASP.NET Core.
+- __Orchard Core CMS__: A Web Content Management System (CMS) built on top of the Orchard Core Framework.
 
-You can try it for free on [DotNest.com](https://dotnest.com) or on Microsoft Azure by clicking on this button.
+[![Join the chat at https://gitter.im/OrchardCMS/OrchardCore](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/OrchardCMS/OrchardCore?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![BSD-3-Clause License](https://img.shields.io/badge/license-BSD--3--Clause-blue.svg)](LICENSE.txt)
+[![Documentation](https://readthedocs.org/projects/orchardcore/badge/)](https://orchardcore.readthedocs.io/en/latest/)
+[![Crowdin](https://d322cqt584bo4o.cloudfront.net/orchard-core/localized.svg)](https://crowdin.com/project/orchard-core)
 
-[![Deploy to Azure](https://azuredeploy.net/deploybutton.png)](https://portal.azure.com/#create/OutercurveFoundation.OrchardCMS)
 
-## About The Orchard Project
+## Build Status
 
-#### Please visit our website at https://orchardproject.net for the most current information about this project.
+Stable (master): 
 
-Orchard is a free, open source, community-focused **Content Management System** built on the ASP.NET MVC platform.
+[![Build Status](https://api.travis-ci.org/OrchardCMS/OrchardCore.svg?branch=master)](https://travis-ci.org/OrchardCMS/OrchardCore/branches)
+[![Build status](https://img.shields.io/appveyor/ci/alexbocharov/orchardcore/master.svg?label=appveyor&style=flat-square)](https://ci.appveyor.com/project/alexbocharov/orchardcore/branch/master)
+[![NuGet](https://img.shields.io/nuget/v/OrchardCore.Application.Cms.Targets.svg)](https://www.nuget.org/packages/OrchardCore.Application.Cms.Targets)
 
-Orchard is built on a modern architecture that puts extensibility up-front, as its number one concern. All components in Orchard can be replaced or extended. Content is built from easily composable building blocks. Modules extend the system in a very decoupled fashion, where a commenting module for example can as easily apply to pages, blog posts, photos or products. A rich UI composition system completes the picture and ensures that you can get the exact presentation that you need for your content.
+Nightly (dev): 
 
-Orchard is delivered under the [.NET Foundation](https://www.dotnetfoundation.org/projects?searchquery=Orchard&type=project). It is licensed under a [New BSD license](https://www.opensource.org/licenses/bsd-license.php), which is approved by the OSI.
+[![Build Status](https://api.travis-ci.org/OrchardCMS/OrchardCore.svg?branch=dev)](https://travis-ci.org/OrchardCMS/OrchardCore/branches)
+[![Build status](https://img.shields.io/appveyor/ci/alexbocharov/orchardcore/dev.svg?label=appveyor&style=flat-square)](https://ci.appveyor.com/project/alexbocharov/orchardcore/branch/dev)
+[![MyGet](https://img.shields.io/myget/orchardcore-preview/vpre/OrchardCore.Application.Cms.Targets.svg)](https://myget.org/feed/orchardcore-preview/package/nuget/OrchardCore.Application.Cms.Targets)
 
-Our mission is to empower our users and foster a dedicated and diverse community that builds the CMS that we all want to use.
+## Status
 
-## Project Status
+### RC 1
 
-Orchard is currently in version **[1.10.3](https://github.com/OrchardCMS/Orchard/releases/tag/1.10.3)**: It contains bugfixes and the more impactful changes and new features added in the latest major version (*1.10*).
+The software is almost ready for final release. No feature development or enhancement of the software is undertaken; tightly scoped bug fixes are the only code you're allowed to write in this phase, and even then only for the most heinous and debilitating of bugs.
 
-We invite participation by the developer community in shaping the project’s direction, so that we can publicly validate our designs and development approach. 
-All our releases are available on our [Releases](https://github.com/OrchardCMS/Orchard/releases) page, and we encourage interested developers to check out the source code on the Orchard GitHub site and get involved with the project.
+Here is a more detailed [roadmap](https://github.com/OrchardCMS/OrchardCore/wiki/Roadmap).
 
-* [Download the latest release](https://github.com/OrchardCMS/Orchard/releases)
-* [Feature roadmap](https://docs.orchardproject.net/en/latest/Documentation/Feature-roadmap/)
-* [Docs and designs/specs](https://docs.orchardproject.net)
+## Getting Started
 
-## How To Get Involved
+- Clone the repository using the command `git clone https://github.com/OrchardCMS/OrchardCore.git` and checkout the `dev` branch. 
 
-We hope that by engaging with the community we will continue to shape Orchard into a valuable set of tools and applications. The Orchard team is committed to open community participation and accepts code contributions.  We encourage community participation at all levels from general project feedback to bug fixes and patches.  
+### Command line
 
-There are many ways you can contribute to Orchard:
+- Install the latest versions (current) for both Runtime and SDK of .NET Core from this page https://www.microsoft.com/net/download/core
+- Navigate to `D:\OrchardCore\src\OrchardCore.Cms.Web` or wherever your respective folder is on the command line in Administrator mode.
+- Call `dotnet run`.
+- Then open the `http://localhost:5000` URL in your browser.
 
-* [Check out the code](https://github.com/OrchardCMS/Orchard)
-* [Write documentation](https://github.com/OrchardCMS/OrchardDoc)
-* [Find and file a bug](https://github.com/OrchardCMS/Orchard/issues)
-* [Propose a feature idea](https://github.com/OrchardCMS/Orchard/issues/new)
-* [Ask and answer questions on Stack Overflow](https://stackoverflow.com/questions/tagged/orchardcms)
-* [Participate in our gitter.im chatroom](https://gitter.im/OrchardCMS/Orchard)
-* [Submit a pull request](https://docs.orchardproject.net/en/latest/Documentation/Contributing-patches/)
-* [Translate Orchard](https://crowdin.com/project/orchard-cms)
-* [Contribute modules and themes to our gallery](https://gallery.orchardproject.net/)
+### Visual Studio
 
-## The Future Of Orchard CMS: Orchard Core
+- Download Visual Studio 2017 or 2019 (any edition) from https://www.visualstudio.com/downloads/
+- Open `OrchardCore.sln` and wait for Visual Studio to restore all Nuget packages
+- Ensure `OrchardCore.Cms.Web` is the startup project and run it
 
-As the underlying frameworks (.NET, ASP.NET and ASP.NET MVC) are constantly evolving, Orchard of course keeps track of the changes and improvements of these: Orchard Core is the next generation of Orchard releases that is based on [ASP.NET Core](https://www.asp.net/core). Just like the current Orchard project, it's fully [open-source and is publicly available on GitHub](https://github.com/OrchardCMS/OrchardCore). Orchard Core (as a framework) is being built from scratch: it's still in development and does not share any of its code base (at least directly) with the current versions (1.x) of Orchard.
+### Docker
+
+- Run `docker run --name orchardcms orchardproject/orchardcore-cms-linux:latest`
+
+Docker images and parameters can be found at https://hub.docker.com/u/orchardproject/
+
+### Documentation
+
+The documentation can be accessed here: [https://orchardcore.readthedocs.io/en/dev/](https://orchardcore.readthedocs.io/en/dev/)
