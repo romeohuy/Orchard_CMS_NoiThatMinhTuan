@@ -2,9 +2,11 @@
     int level = (int)Model.Level;
     TagBuilder tag = Tag(Model, "li");
 
+    tag.AddCssClass("menu-item");
+
     if ((bool)Model.HasItems)
     {
-        tag.AddCssClass("dropdown");
+        tag.AddCssClass("menu-item-has-children");
     }
 
     // Morphing the shape to keep Model untouched
@@ -16,7 +18,8 @@
     if ((bool)(Model.HasItems))
     {
         TagBuilder parentTag = Tag(Model, "ul");
-        parentTag.AddCssClass("dropdown-menu");
+        parentTag.AddCssClass("sub-menu");
+        parentTag.AddCssClass("menu-item-has-children");
 
         foreach (var item in Model.Items)
         {

@@ -6,34 +6,88 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@RenderTitleSegments(Site.SiteName, "before")</title>
     <link type="image/x-icon" rel="shortcut icon" href="~/TheTheme/favicon.ico" />
-    <script asp-name="bootstrap" version="4" at="Foot"></script>
-    <style asp-name="bootstrap" version="4"></style>
-    <style asp-name="font-awesome" version="5"></style>
-    <style asp-src="~/TheTheme/css/sticky-footer-navbar.css"></style>
+    <!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- Theme Style -->
+    <link rel="stylesheet" type="text/css" href="~/TheTheme/style.css">
+
+    <!-- Colors -->
+    <link rel="stylesheet" type="text/css" href="~/TheTheme/assets/css/colors/color1.css" id="colors">
+
+    <!-- Favicon and Touch Icons  -->
+    <link rel="shortcut icon" href="~/TheTheme/assets/icon/favicon.png">
+    <link rel="apple-touch-icon-precomposed" href="~/TheTheme/assets/icon/apple-touch-icon-158-precomposed.png">
+
+    <!--[if lt IE 9]>
+        <script src="javascript/html5shiv.js"></script>
+        <script src="javascript/respond.min.js"></script>
+    <![endif]-->
     <resources type="Meta" />
     <resources type="HeadLink" />
     <resources type="Stylesheet" />
     <resources type="HeadScript" />
 </head>
-<body dir="@Orchard.CultureDir()">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="~/#">@Site.SiteName</a>
-            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbar">
-                <menu alias="alias:main-menu" cache-id="main-menu" cache-fixed-duration="00:05:00" cache-tag="alias:main-menu" />
-                <partial name="LoginMenu" />
-            </div>
-        </div>
-    </nav>
-    @await RenderSectionAsync("Header", required: false)
-    <main role="main" class="container">
-        @await RenderSectionAsync("Messages", required: false)
-        @await RenderBodyAsync()
-    </main>
+<body class="header-fixed page no-sidebar header-style-3 topbar-style-3 site-header-absolute menu-has-search">
+    <div id="wrapper" class="animsition">
+        <div id="page" class="clearfix">
+                @* <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+                    <div class="container">
+                        <a class="navbar-brand" href="~/#">@Site.SiteName</a>
+                        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbar">
+                            <menu alias="alias:main-menu" cache-id="main-menu" cache-fixed-duration="00:05:00" cache-tag="alias:main-menu" />
+                            <partial name="LoginMenu" />
+                        </div>
+                    </div>
+                </nav> *@
+                <partial name="HeaderTop" />
+                @await RenderSectionAsync("Header", required: false)
+                <main role="main" class="container">
+                    @await RenderSectionAsync("Messages", required: false)
+                    @await RenderBodyAsync()
+                </main>
+        </div><!-- /#page -->
+    </div><!-- /#wrapper -->
     @await RenderSectionAsync("Footer", required: false)
+
+    <a id="scroll-top"></a>
+
+    <!-- Javascript -->
+    <script src="~/TheTheme/assets/js/jquery.min.js"></script>
+    <script src="~/TheTheme/assets/js/plugins.js"></script>
+    <script src="~/TheTheme/assets/js/tether.min.js"></script>
+    <script src="~/TheTheme/assets/js/bootstrap.min.js"></script>
+    <script src="~/TheTheme/assets/js/animsition.js"></script>
+    <script src="~/TheTheme/assets/js/owl.carousel.min.js"></script>
+    <script src="~/TheTheme/assets/js/countto.js"></script>
+    <script src="~/TheTheme/assets/js/equalize.min.js"></script>
+    <script src="~/TheTheme/assets/js/jquery.isotope.min.js"></script>
+    <script src="~/TheTheme/assets/js/owl.carousel2.thumbs.js"></script>
+
+    <script src="~/TheTheme/assets/js/jquery.cookie.js"></script>
+    <script src="~/TheTheme/assets/js/gmap3.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIEU6OT3xqCksCetQeNLIPps6-AYrhq-s&amp;region=GB"></script>
+    <script src="~/TheTheme/assets/js/shortcodes.js"></script>
+    <script src="~/TheTheme/assets/js/main.js"></script>
+
+    <!-- Revolution Slider -->
+    <script src="~/TheTheme/includes/rev-slider/js/jquery.themepunch.tools.min.js"></script>
+    <script src="~/TheTheme/includes/rev-slider/js/jquery.themepunch.revolution.min.js"></script>
+    <script src="~/TheTheme/assets/js/rev-slider.js"></script>
+    <!-- Load Extensions only on Local File Systems ! The following part can be removed on Server for On Demand Loading -->  
+    <script src="~/TheTheme/includes/rev-slider/js/extensions/revolution.extension.actions.min.js"></script>
+    <script src="~/TheTheme/includes/rev-slider/js/extensions/revolution.extension.carousel.min.js"></script>
+    <script src="~/TheTheme/includes/rev-slider/js/extensions/revolution.extension.kenburn.min.js"></script>
+    <script src="~/TheTheme/includes/rev-slider/js/extensions/revolution.extension.layeranimation.min.js"></script>
+    <script src="~/TheTheme/includes/rev-slider/js/extensions/revolution.extension.migration.min.js"></script>
+    <script src="~/TheTheme/includes/rev-slider/js/extensions/revolution.extension.navigation.min.js"></script>
+    <script src="~/TheTheme/includes/rev-slider/js/extensions/revolution.extension.parallax.min.js"></script>
+    <script src="~/TheTheme/includes/rev-slider/js/extensions/revolution.extension.slideanims.min.js"></script>
+    <script src="~/TheTheme/includes/rev-slider/js/extensions/revolution.extension.video.min.js"></script>
+
     <resources type="FootScript" />
 </body>
 </html>
